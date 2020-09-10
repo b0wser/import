@@ -1,0 +1,88 @@
+[14:02:26][Step 8/8] INFO: Check does /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054/package.json file exist
+[14:02:26][Step 8/8] INFO: /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054/package.json file exists
+[14:02:26][Step 8/8] [JENKINS][INFO] validate package name @vtb/fe-invest
+[14:02:26][Step 8/8] json.arms is [client-iteration]
+[14:02:26][Step 8/8] No such property: cfg for class: cicd.lib.Vars
+[14:02:26][Step 8/8] Running in /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/bin
+[14:02:26][Step 8/8] Script:
+cat /tmp/devops-pipelines/ansible/ansible_config.json
+[14:02:26][Step 8/8] {"configmap_update":true,"kubectl_path":"/app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/tools/kubectl-v1.14.5/kubectl","secret_update":false,"docker_tag":"investigate2-SNAPSHOT","service_dir":"/app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054","default_config":{},"docker_registry":"dbo2-docker-lib.nexus-ci.corp.dev.vtb","docker_user":"ci_dos_DBO2","docker_password":"*******","devops_root_dir":"/tmp/devops-pipelines","docker_user_email":"devops@vtb.ru","namespace":"dev1-cnt1","service_name":"fe-invest","service_version":"investigate2","ui_version":"investigate2-SNAPSHOT","service_build_number":"15","environment_name":"DEV-DA","branch":"investigate2","master_ip":"http://10.203.226.3:8080","service_type":"ui","update_secrets_if_exist":true,"helm":false,"externalAccess":true,"separateBuild":true,"token_exists":false,"root_uri":"da-dbo2-k8s-dev.corp.dev.vtb","fe_arms_list":["client-iteration"],"fe_package_name":"fe-invest","common_fe_package":false}
+[14:02:26][Step 8/8] 
+[14:02:26][Step 8/8] 
+[14:02:27][Step 8/8] ansible-playbook deploy_service_k8s.yml --extra-vars @/tmp/devops-pipelines/ansible/ansible_config.json -vv
+[14:02:27][Step 8/8] Running in /tmp/devops-pipelines/ansible
+[14:02:27][Step 8/8] Script:
+source /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054/ansible_2.9.11/bin/activate && ansible-playbook deploy_service_k8s.yml --extra-vars @/tmp/devops-pipelines/ansible/ansible_config.json -vv
+[14:02:28][Step 8/8] ansible-playbook 2.9.11
+[14:02:28][Step 8/8]   config file = None
+[14:02:28][Step 8/8]   configured module search path = ['/app/teamcity-ci-cdl-agent/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+[14:02:28][Step 8/8]   ansible python module location = /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054/ansible_2.9.11/lib/python3.6/site-packages/ansible
+[14:02:28][Step 8/8]   executable location = /app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/work/85228b8b1e5d6054/ansible_2.9.11/bin/ansible-playbook
+[14:02:28][Step 8/8]   python version = 3.6.9 (default, Sep 11 2019, 16:40:19) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+[14:02:28][Step 8/8] No config file found; using defaults
+[14:02:28][Step 8/8] [WARNING]: No inventory was parsed, only implicit localhost is available
+[14:02:28][Step 8/8] [WARNING]: provided hosts list is empty, only localhost is available. Note that
+[14:02:28][Step 8/8] the implicit localhost does not match 'all'
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/create_namespace.yml
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/deploy_configmap_old.yml
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/deploy_configmap.yml
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/deploy_configmap_from_files.yml
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/deploy_secrets.yml
+[14:02:29][Step 8/8] statically imported: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/fe-root-get-services.yml
+[14:02:29][Step 8/8] 
+[14:02:29][Step 8/8] PLAYBOOK: deploy_service_k8s.yml ***********************************************
+[14:02:29][Step 8/8] 1 plays in deploy_service_k8s.yml
+[14:02:29][Step 8/8] 
+[14:02:29][Step 8/8] PLAY [localhost] ***************************************************************
+[14:02:29][Step 8/8] 
+[14:02:29][Step 8/8] TASK [Gathering Facts] *********************************************************
+[14:02:29][Step 8/8] task path: /tmp/devops-pipelines/ansible/deploy_service_k8s.yml:2
+[14:02:31][Step 8/8] ok: [localhost]
+[14:02:31][Step 8/8] META: ran handlers
+[14:02:31][Step 8/8] 
+[14:02:31][Step 8/8] TASK [deploy-service-k8s : Define variables without token] *********************
+[14:02:31][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:2
+[14:02:31][Step 8/8] ok: [localhost] => {"ansible_facts": {"kubectl": "/app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/tools/kubectl-v1.14.5/kubectl -s http://10.203.226.3:8080 "}, "changed": false}
+[14:02:31][Step 8/8] 
+[14:02:31][Step 8/8] TASK [deploy-service-k8s : Define variables with token] ************************
+[14:02:31][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:7
+[14:02:31][Step 8/8] skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+[14:02:31][Step 8/8] 
+[14:02:31][Step 8/8] TASK [deploy-service-k8s : Define variables helm] ******************************
+[14:02:31][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:13
+[14:02:31][Step 8/8] ok: [localhost] => {"ansible_facts": {"helm_release_name": "fe-invest-dev1-cnt1"}, "changed": false}
+[14:02:31][Step 8/8] 
+[14:02:31][Step 8/8] TASK [deploy-service-k8s : Define variables service type] **********************
+[14:02:31][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:18
+[14:02:31][Step 8/8] ok: [localhost] => {"ansible_facts": {"service_type": "microservice"}, "changed": false}
+[14:02:31][Step 8/8] 
+[14:02:31][Step 8/8] TASK [deploy-service-k8s : check directory] ************************************
+[14:02:31][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:22
+[14:02:32][Step 8/8] ok: [localhost] => {"changed": false, "path": "/root/.kube/config", "state": "absent"}
+[14:02:32][Step 8/8] 
+[14:02:32][Step 8/8] TASK [deploy-service-k8s : Define template name] *******************************
+[14:02:32][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:44
+[14:02:32][Step 8/8] ok: [localhost] => {"ansible_facts": {"devops_template": "fe-invest.yml"}, "changed": false}
+[14:02:32][Step 8/8] 
+[14:02:32][Step 8/8] TASK [deploy-service-k8s : Define template name] *******************************
+[14:02:32][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:51
+[14:02:32][Step 8/8] skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+[14:02:32][Step 8/8] 
+[14:02:32][Step 8/8] TASK [deploy-service-k8s : Define template name] *******************************
+[14:02:32][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:61
+[14:02:32][Step 8/8] ok: [localhost] => {"ansible_facts": {"devops_template": "ui_arms.yml"}, "changed": false}
+[14:02:32][Step 8/8] 
+[14:02:32][Step 8/8] TASK [deploy-service-k8s : Create necessary directories] ***********************
+[14:02:32][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/main.yml:71
+[14:02:32][Step 8/8] ok: [localhost] => {"changed": false, "gid": 5003, "group": "teamcity-ci-cdl-agent", "mode": "0755", "owner": "teamcity-ci-cdl-agent", "path": "/tmp/fe-invest", "size": 84, "state": "directory", "uid": 5003}
+[14:02:32][Step 8/8] 
+[14:02:32][Step 8/8] TASK [deploy-service-k8s : Check namespace dev1-cnt1 status] *******************
+[14:02:32][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/create_namespace.yml:1
+[14:02:33][Step 8/8] changed: [localhost] => {"changed": true, "cmd": "bash -c \"test \\\"$(echo $(/app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/tools/kubectl-v1.14.5/kubectl -s http://10.203.226.3:8080  get namespace | awk '{print $1}' | grep ^dev1-cnt1$ | wc -l))\\\" == \\\"1\\\" && echo true || echo false\"", "delta": "0:00:00.280851", "end": "2020-09-10 14:02:33.700941", "rc": 0, "start": "2020-09-10 14:02:33.420090", "stderr": "", "stderr_lines": [], "stdout": "false", "stdout_lines": ["false"]}
+[14:02:33][Step 8/8] 
+[14:02:33][Step 8/8] TASK [deploy-service-k8s : Label namespace dev1-cnt1] **************************
+[14:02:33][Step 8/8] task path: /tmp/devops-pipelines/ansible/roles/deploy-service-k8s/tasks/create_namespace.yml:9
+[14:02:34][Step 8/8] fatal: [localhost]: FAILED! => {"changed": true, "cmd": "/app/teamcity-ci-cdl-agent/di-tcdd-ag215lv-01/tools/kubectl-v1.14.5/kubectl -s http://10.203.226.3:8080  label namespace dev1-cnt1 environment=DEV-DA --overwrite=true", "delta": "0:00:00.101748", "end": "2020-09-10 14:02:34.175225", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 14:02:34.073477", "stderr": "Error from server (NotFound): namespaces \"dev1-cnt1\" not found", "stderr_lines": ["Error from server (NotFound): namespaces \"dev1-cnt1\" not found"], "stdout": "", "stdout_lines": []}
+[14:02:34][Step 8/8] 
+[14:02:34][Step 8/8] PLAY RECAP *********************************************************************
+[14:02:34][Step 8/8] localhost                  : ok=9    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
